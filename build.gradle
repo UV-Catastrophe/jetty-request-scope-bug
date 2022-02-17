@@ -1,0 +1,37 @@
+plugins {
+    id("io.micronaut.application") version "3.1.1"
+}
+
+version = "0.1"
+group = "myapp"
+
+repositories {
+    mavenCentral()
+}
+
+micronaut {
+    runtime("jetty")
+    testRuntime("junit5")
+    processing {
+        incremental(true)
+        annotations("myapp.*")
+    }
+}
+
+dependencies {
+    annotationProcessor("io.micronaut:micronaut-http-validation")
+    implementation("io.micronaut:micronaut-runtime")
+    runtimeOnly("ch.qos.logback:logback-classic")
+    implementation("io.micronaut:micronaut-validation")
+
+    implementation 'io.micronaut.rxjava2:micronaut-rxjava2'
+
+    implementation "io.micronaut:micronaut-inject"
+    implementation "io.micronaut.security:micronaut-security"
+}
+
+
+application {
+    mainClass.set("myapp.Application")
+}
+

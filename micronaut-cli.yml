@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: myapp
+testFramework: junit
+sourceLanguage: java
+buildTool: gradle
+features: [annotation-api, app-name, gradle, http-client, java, java-application, jetty-server, junit, logback, micronaut-build, readme, shade, yaml]
